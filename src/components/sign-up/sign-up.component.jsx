@@ -31,7 +31,7 @@ class SignUp extends React.Component {
         }
 
         try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password)
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
 
             await createUserProfileDocument(user, { displayName});
 
@@ -40,13 +40,11 @@ class SignUp extends React.Component {
                 email: '',
                 password: '',
                 confirmPassword: ''
-            })
+            });
 
         } catch (error) {
             console.error(error);
-
         }
-
     };
 
     handleChange = event => {
@@ -94,10 +92,8 @@ class SignUp extends React.Component {
                         label='Confirm Password'
                         required
                     />
-                    <CustomButton
-                        type='submit'
-                    >
-                    SIGN UP
+                    <CustomButton type='submit'>
+                        SIGN UP
                     </CustomButton>
                 </form>
 
