@@ -17,7 +17,7 @@ class SignUp extends React.Component {
             email: '',
             password: '',
             confirmPassword: ''
-        }
+        };
     }
 
     handleSubmit = async event => {
@@ -25,13 +25,16 @@ class SignUp extends React.Component {
 
         const {displayName, email, password, confirmPassword} = this.state;
 
-        if(password !== confirmPassword) {
+        if (password !== confirmPassword) {
             alert("passwords don't match");
             return;
         }
 
         try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+            const { user } = await auth.createUserWithEmailAndPassword(
+                email, 
+                password
+            );
 
             await createUserProfileDocument(user, { displayName});
 
@@ -79,7 +82,7 @@ class SignUp extends React.Component {
                     <FormInput
                         type='password'
                         name='password'
-                        value={this.state.password}
+                        value={password}
                         onChange={this.handleChange}
                         label='Password'
                         required
@@ -99,7 +102,7 @@ class SignUp extends React.Component {
 
             </div>
 
-        )
+        );
     }
 }
 
