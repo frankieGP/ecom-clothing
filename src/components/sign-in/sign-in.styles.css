@@ -1,4 +1,5 @@
-.collection-preview {
+.sign-in {
+  width: 380px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,15 +7,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 30px;
 }
 
-.collection-preview .title {
-  font-size: 28px;
-  margin-bottom: 25px;
+.sign-in .title {
+  margin: 10px  0;
 }
 
-.collection-preview .preview {
+.sign-in .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,4 +21,4 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-/*# sourceMappingURL=collection-preview.styles.css.map */
+/*# sourceMappingURL=sign-in.styles.css.map */
