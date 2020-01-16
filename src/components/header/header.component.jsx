@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect';
-import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
@@ -39,15 +38,17 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
  
         }
     </HeaderContainer>
-)
-
-const mapDispatchToProps = dispatch => ({
-    signOutStart: () => dispatch(signOutStart())
-});
+);
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     hidden: selectCartHidden
 });
+
+const mapDispatchToProps = dispatch => ({
+    signOutStart: () => dispatch(signOutStart())
+});
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
