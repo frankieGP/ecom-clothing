@@ -1,4 +1,3 @@
-  
 import styled from 'styled-components';
 import CustomButton from '../custom-button/custom-button.component';
 
@@ -18,7 +17,21 @@ export const CollectionItemContainer = styled.div`
       display: flex;
     }
   }
-`;
+    @media screen and (max-width: 800px){
+      width: 40vw;
+
+      &:hover {
+        .image {
+          opacity: unset;
+      }
+      button {
+        opacity: unset;
+        display: flex;
+      }
+
+    }
+  }
+` ;
 
 export const AddButton = styled(CustomButton)`
   width: 80%;
@@ -26,6 +39,13 @@ export const AddButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
+  
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `;
 
 export const BackgroundImage = styled.div`
